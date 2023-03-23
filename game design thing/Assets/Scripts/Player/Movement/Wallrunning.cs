@@ -7,28 +7,50 @@ public class Wallrunning : MonoBehaviour
 {
     public bool wallrunwork;
     public GameObject player;
-    public ConstantForce gravity;
-    public bool onwall;
+
+    public bool onwallLeft;
+    public bool onwallRight;
     // Start is called before the first frame update
     void Start()
     {
         wallrunwork = true;
-        onwall = false;
+        onwallLeft = false;
+        onwallRight = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (onwallLeft == true)
+        {
+            GetComponent<Rigidbody>().AddForce(9.81f, 0.0f, 0.0f);
+        }
+        if (onwallRight == true)
+        {
+            GetComponent<Rigidbody>().AddForce(-9.81f, 0.0f, 0.0f);
+        }
     }
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Wall")
+        if (other.gameObject.tag == "wallLeft")
         {
-            gravity = gameObject.AddComponent<ConstantForce>();
-            gravity.force = new Vector3(0.0f, -9.81f, 0.0f);
-            gameObject.GetComponent<Rigidbody>().useGravity = false;
-            onwall = true;
+            
+            onwallLeft = true;
+        }
+        if (other.gameObject.tag == "wallRight")
+        {
+            onwallRight = true;
+        }
+    }
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.tag == "wallLeft")
+        {
+            onwallLeft = false;
+        }
+        if (other.gameObject.tag == "wallRight")
+        {
+            onwallRight = false;
         }
     }
 }
