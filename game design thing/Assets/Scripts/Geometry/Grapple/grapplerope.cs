@@ -4,27 +4,25 @@ using UnityEngine;
 
 public class grapplerope : MonoBehaviour
 {
-    public float Marcus;
     public float Johnny;
     // Start is called before the first frame update
     void Start()
     {
-        Marcus = 5;
+        Johnny = 20;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Marcus = 5;
-        Johnny = transform.localScale.x - Marcus;
+        
         transform.localScale = new Vector3(Johnny, transform.localScale.y, transform.localScale.z);
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
-            Marcus -1;
-
+            Johnny --;
+            
         }
     }
 }
