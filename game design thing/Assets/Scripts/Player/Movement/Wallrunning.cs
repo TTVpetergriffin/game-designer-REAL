@@ -51,6 +51,7 @@ public class Wallrunning : MonoBehaviour
         if (other.gameObject.tag == "wallRight")
         {
             onwallRight = false;
+            
         }
     }
 }

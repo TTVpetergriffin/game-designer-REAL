@@ -10,6 +10,7 @@ TagManager:
   - wallLeft
   - wallRight
   - grapplepoint1
+  - GrappleRope1
   layers:
   - Default
   - TransparentFX
