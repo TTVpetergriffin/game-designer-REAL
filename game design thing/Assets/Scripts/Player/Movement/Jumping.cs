@@ -26,7 +26,7 @@ public class Jumping : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground")|| (collision.gameObject.CompareTag("WallrunZpositive") || (collision.gameObject.CompareTag("WallrunZnegative"))) || (collision.gameObject.CompareTag("Wallleft")) || (collision.gameObject.CompareTag("Wallright")))
         {
             isOnGround = true;
         }

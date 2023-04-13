@@ -11,6 +11,8 @@ TagManager:
   - wallRight
   - grapplepoint1
   - GrappleRope1
+  - WallrunZpositive
+  - WallrunZnegative
   layers:
   - Default
   - TransparentFX

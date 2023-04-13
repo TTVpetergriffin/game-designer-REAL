@@ -10,12 +10,16 @@ public class Wallrunning : MonoBehaviour
 
     public bool onwallLeft;
     public bool onwallRight;
+    public bool onwallZP;
+    public bool onwallZN;
     // Start is called before the first frame update
     void Start()
     {
         wallrunwork = true;
         onwallLeft = false;
         onwallRight = false;
+        onwallZP = false;
+        onwallZN = false;
     }
 
     // Update is called once per frame
@@ -29,6 +33,15 @@ public class Wallrunning : MonoBehaviour
         {
             GetComponent<Rigidbody>().AddForce(-9.81f, 0.0f, 0.0f);
         }
+        if (onwallZP == true)
+        {
+            GetComponent<Rigidbody>().AddForce(0.0f, 0.0f, 9.81f);
+        }
+        if (onwallZN == true)
+        {
+            GetComponent<Rigidbody>().AddForce(0, 0.0f, -9.81f);
+
+        }
     }
     private void OnCollisionEnter(Collision other)
     {
@@ -41,6 +54,14 @@ public class Wallrunning : MonoBehaviour
         {
             onwallRight = true;
         }
+        if (other.gameObject.tag == "WallrunZpositive")
+        {
+            onwallZP = true;
+        }
+        if (other.gameObject.tag == "WallrunZnegative")
+        {
+            onwallZN = true;
+        }
     }
     private void OnCollisionExit(Collision other)
     {
@@ -51,7 +72,14 @@ public class Wallrunning : MonoBehaviour
         if (other.gameObject.tag == "wallRight")
         {
             onwallRight = false;
-            
+        }
+        if (other.gameObject.tag == "WallrunZpositive")
+        {
+            onwallZP = false;
+        }
+        if (other.gameObject.tag == "WallrunZnegative")
+        {
+            onwallZN = false;
         }
     }
 }
