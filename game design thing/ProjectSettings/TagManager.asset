@@ -13,6 +13,7 @@ TagManager:
   - GrappleRope1
   - WallrunZpositive
   - WallrunZnegative
+  - dangerzone
   layers:
   - Default
   - TransparentFX
