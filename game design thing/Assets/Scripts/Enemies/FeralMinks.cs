@@ -15,7 +15,7 @@ public class FeralMinks : MonoBehaviour
         speed = 3;
         health = 2f;
         enemyRb = GetComponent<Rigidbody>();
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Playercol");
         danger = false;
     }
 
