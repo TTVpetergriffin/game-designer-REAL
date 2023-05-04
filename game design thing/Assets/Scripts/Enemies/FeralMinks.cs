@@ -15,7 +15,7 @@ public class FeralMinks : MonoBehaviour
         speed = 3;
         health = 2f;
         enemyRb = GetComponent<Rigidbody>();
-        player = GameObject.Find("Playercol");
+        player = GameObject.Find("Player");
         danger = false;
     }
 
@@ -28,8 +28,10 @@ public class FeralMinks : MonoBehaviour
         }
         if (danger == true)
         {
-            Vector3 lookDirection = (player.transform.position - transform.position).normalized;
-            enemyRb.AddForce(lookDirection * speed);
+            this.transform.LookAt(this.transform.position, player.transform.position);
+            //Vector3 lookDirection = (player.transform.position - transform.position).normalized;
+            var step = speed * Time.deltaTime; // calculate distance to move
+            this.transform.position = Vector3.MoveTowards(this.transform.position, player.transform.position, step);
         }
     }
     private void OnCollisionEnter(Collision collision)
