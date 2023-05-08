@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FeralMinks : MonoBehaviour
+public class Minks : MonoBehaviour
 {
     public float speed;
     public float health;
@@ -13,7 +13,7 @@ public class FeralMinks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 3;
+        speed = -3f;
         health = 2f;
         enemyRb = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
@@ -30,7 +30,6 @@ public class FeralMinks : MonoBehaviour
         if (danger == true)
         {
             transform.LookAt(playerstare);
-            //Vector3 lookDirection = (player.transform.position - transform.position).normalized;
             var step = speed * Time.deltaTime; // calculate distance to move
             this.transform.position = Vector3.MoveTowards(this.transform.position, player.transform.position, step);
         }
