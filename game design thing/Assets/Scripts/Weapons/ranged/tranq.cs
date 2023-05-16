@@ -38,7 +38,6 @@ public class tranq : MonoBehaviour
     public void UpdateAmmo(int AmmoToLose)
     {
         Ammo += AmmoToLose;
-        AmmoText.text = "Ammo: " + Ammo;
     }
     public void shoot()
     {
