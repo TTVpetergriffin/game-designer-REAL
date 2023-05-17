@@ -5,9 +5,24 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Create_with_VR_Starter_Scene.unity
     guid: afdcb113ffd5a4353ad88f0dd03743af
+  - enabled: 0
+    path: Assets/Scenes/Minklvl1.unity
+    guid: 010dcfd7b24a0e34faf9a8f335f1d971
+  - enabled: 0
+    path: Assets/Scenes/Minklvl2.unity
+    guid: f43ff04fef0bcba4a8c7187fa9981757
+  - enabled: 0
+    path: Assets/Scenes/Mcdonalds.unity
+    guid: 100bcfd91d88b384eb8d213a49bea876
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 8e30f3fb3f24cec419b242aa97ff52fe
+  - enabled: 0
+    path: Assets/Scenes/Level 1.unity
+    guid: 68d8068fb3fe0ac41933e4d1399a34e1
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 8fccb80e6c9a84389a75f2c1ed4d786d, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 4d530a9065f8c7742bb15db6cb6e0929, type: 2}
