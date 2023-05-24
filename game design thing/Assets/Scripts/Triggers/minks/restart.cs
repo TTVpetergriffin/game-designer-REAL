@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class Mcdonaldstransistion : MonoBehaviour
+public class restart : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,12 +13,13 @@ public class Mcdonaldstransistion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
     }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("Mcdonalddonedemo");
+            SceneManager.LoadScene("Minklvl2");
         }
     }
 }

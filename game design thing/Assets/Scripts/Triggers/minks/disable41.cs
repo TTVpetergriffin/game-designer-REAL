@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-public class Mcdonaldstransistion : MonoBehaviour
+
+public class disable41 : MonoBehaviour
 {
+    public GameObject four;
+    public GameObject fourtyone;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,12 +15,14 @@ public class Mcdonaldstransistion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
     }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("Mcdonalddonedemo");
+            Destroy(four);
+            fourtyone.SetActive(true);
         }
     }
 }

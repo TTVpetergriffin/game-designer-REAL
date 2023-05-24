@@ -13,8 +13,8 @@ public class Minks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 3f;
-        health = 2f;
+        speed = 2.5f;
+        health = 1f;
         enemyRb = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
         danger = false;
@@ -31,18 +31,14 @@ public class Minks : MonoBehaviour
         {
             transform.LookAt(playerstare);
             var step = speed * Time.deltaTime; // calculate distance to move
-            this.transform.position = Vector3.MoveTowards(this.transform.position, player.transform.position, step);
+            this.transform.position = Vector3.MoveTowards(this.transform.position, -player.transform.position, step);
         }
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Bullet")
-        {
-            health--;
-        }
         if (collision.gameObject.tag == "Player")
         {
-            StartCoroutine(hitstop());
+            health--;
         }
     }
     private void OnTriggerEnter(Collider trigger)
@@ -51,16 +47,5 @@ public class Minks : MonoBehaviour
         {
             danger = true;
         }
-    }
-    IEnumerator hitstop()
-    {
-        yield return new WaitForSeconds(0);
-        speed = 0;
-        StartCoroutine(hitrecovery());
-    }
-    IEnumerator hitrecovery()
-    {
-        yield return new WaitForSeconds(2);
-        speed = 3;
     }
 }

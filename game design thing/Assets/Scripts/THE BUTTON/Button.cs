@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour
 {
-    public GameObject deletebox;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,7 @@ public class Button : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(deletebox);
+            SceneManager.LoadScene("Mcdonaldsnuked");
         }
     }
 }

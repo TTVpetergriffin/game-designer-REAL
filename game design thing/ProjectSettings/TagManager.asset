@@ -15,6 +15,7 @@ TagManager:
   - WallrunZnegative
   - dangerzone
   - Killzone
+  - Mink
   layers:
   - Default
   - TransparentFX
