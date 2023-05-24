@@ -13,7 +13,7 @@ public class Minks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = -3f;
+        speed = 3f;
         health = 2f;
         enemyRb = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
